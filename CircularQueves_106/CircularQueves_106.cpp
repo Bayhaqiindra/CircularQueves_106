@@ -38,3 +38,5 @@ public:
 	queve_array[REAR] = num;
 }
 
+	void remove() {
+	

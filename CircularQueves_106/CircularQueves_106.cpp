@@ -61,3 +61,5 @@ public:
 	}
 
 	void dispay() {
+		int FRONT_position = FRONT;
+		int REAR_position = REAR;

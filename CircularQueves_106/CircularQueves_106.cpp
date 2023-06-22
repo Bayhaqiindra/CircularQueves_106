@@ -29,3 +29,6 @@ public:
 		REAR = 0;
 	}
 	else {
+		//Jika REAR berada di posisi terakhir array, kembali ke awal array
+		if (REAR == max - 1)
+			REAR = 0;

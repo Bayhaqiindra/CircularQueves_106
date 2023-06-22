@@ -17,26 +17,26 @@ public:
 		cin >> num;
 		cout << endl;
 
-	//Cek apakah antrian penuh
-	if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)) {
-		cout << "\nQueve overflow\n";
-		return;
-	}
+		//Cek apakah antrian penuh
+		if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)) {
+			cout << "\nQueve overflow\n";
+			return;
+		}
 
-	//Cek apakah antrian kosong
-	if (FRONT == -1) {
-		FRONT = 0;
-		REAR = 0;
-	}
-	else {
-		//Jika REAR berada di posisi terakhir array, kembali ke awal array
-		if (REAR == max - 1)
+		//Cek apakah antrian kosong
+		if (FRONT == -1) {
+			FRONT = 0;
 			REAR = 0;
-		else
-			REAR = REAR + 1;
+		}
+		else {
+			//Jika REAR berada di posisi terakhir array, kembali ke awal array
+			if (REAR == max - 1)
+				REAR = 0;
+			else
+				REAR = REAR + 1;
+		}
+		queve_array[REAR] = num;
 	}
-	queve_array[REAR] = num;
-}
 
 	void remove() {
 		//Cek apakah antrian kosong
@@ -60,7 +60,7 @@ public:
 		}
 	}
 
-	void dispay() {
+	void display() {
 		int FRONT_position = FRONT;
 		int REAR_position = REAR;
 
@@ -71,7 +71,7 @@ public:
 		}
 
 		cout << "\nElements in the queve are..\n";
-		
+
 		// Jika FRONT_posisition <= REAR_posisition, literasi dari Front hingga REAR
 		if (FRONT_position <= REAR_position) {
 			while (FRONT_position <= REAR_position) {
@@ -80,3 +80,11 @@ public:
 			}
 			cout << endl;
 		}
+		else {
+			//Jika FRONT_position > RAER_position, literasi dari FRONT hingga akhir array
+			while (FRONT_position <= max - 1) {
+				cout << queve_array[FRONT_position] << "  ";
+				FRONT_position++;
+			}
+
+			FRONT_position = 0;

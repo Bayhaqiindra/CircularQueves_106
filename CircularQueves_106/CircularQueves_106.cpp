@@ -63,3 +63,12 @@ public:
 	void dispay() {
 		int FRONT_position = FRONT;
 		int REAR_position = REAR;
+
+		//cek apakah antran kosong
+		if (FRONT == -1) {
+			cout << "Queve is empty\n";
+			return;
+		}
+
+		cout << "\nElements in the queve are..\n";
+		

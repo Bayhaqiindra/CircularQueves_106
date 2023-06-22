@@ -25,4 +25,4 @@ public:
 
 	//Cek apakah antrian kosong
 	if (FRONT == -1) {
-
+		FRONT = 0;
